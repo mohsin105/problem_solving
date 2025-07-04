@@ -1,0 +1,19 @@
+**Sorting an array 
+    int a[n];
+    sort(a,a+n);
+
+    Sort in descending order=> 
+    sort(a,a+n,greater<int>());
+
+
+**Sorting an array of Object: 
+(    use of cmp() function  )
+
+    - cmp() takes two instances of objects. 
+    - compares. 
+    - returns a boolean value. 
+    
+    If, cmp() returns 
+
+            - true => sorting/swapping does NOT happen. 
+            - false => sorting/swapping happens. 

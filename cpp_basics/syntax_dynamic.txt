@@ -1,0 +1,23 @@
+new data_type;
+    it creates/stores space in dynamic/heap memory and 
+    return the address of that memory.
+
+int * a=new int;
+    Here,
+        new int ⇒ returns the address of the d-memory in which integer value is stored.
+        a ⇒ pointer variable, stores the address of d-memory
+    
+    By dereferencing a, we can assign value to the dynamic variable 
+    and print it and access it. 
+    
+    *a=10;          //assigning 10 by dereferencing the pointer of d-memory
+    
+    cout<<*a<<endl; //prints 10
+
+
+
+Deleting Dynamic memory
+    
+    deleting a dynamic variable ⇒ delete pointer_variable;
+    
+    deleting a dynamic array ⇒ delete[] pointer_variable;

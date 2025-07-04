@@ -1,0 +1,26 @@
+Initialization and Assignment⇒ 
+
+    - string s1="Hellow World";
+    - string s1("Hello World");
+    - string s1(5,'y');         //assigns: yyyyy
+
+
+Modification⇒  
+
+            string a=""Hello; 
+            string b="World";
+    - 
+
+Size and Resize⇒ 
+
+
+
+Access Elements⇒ 
+
+
+
+Pointer of String Class ⇒ 
+
+
+
+Accessing elements using Pointer ⇒ 
