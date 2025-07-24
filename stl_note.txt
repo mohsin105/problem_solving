@@ -1,2 +1,28 @@
 Library of Data Structures. 
+    - a readymade shortcut form/version of a data structure
     - Provides built-in features and functions. 
+    - Can work with any data type
+
+
+**Declaration of STL based ds:**
+
+               stl_name<data_type>ds_name;
+
+
+
+
+### STL works with pointers, not index
+
+        - pointer of first element⇒         ds_name.begin();
+
+        - pointer of the next place of the last element⇒    ds_name.end();
+
+        - pointer of the last element⇒      ds_name.end()-1;
+
+
+
+### Accessing element of an STL ds⇒
+
+        - first element⇒        ds_name.front();
+        - last element⇒         ds_name.back();
+

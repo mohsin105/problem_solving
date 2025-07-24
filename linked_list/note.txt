@@ -1,0 +1,8 @@
+head == NULL means Linked List is empty. 
+
+Last node's next is NULL. 
+    Meaning, tail->next is NULL 
+    meaning , if a node's next is NULL, then that node is the tail. 
+
+when inserting of deleting at position , 
+    position is like indexing. Starts counting from 0, not 1
