@@ -6,3 +6,96 @@ Last node's next is NULL.
 
 when inserting of deleting at position , 
     position is like indexing. Starts counting from 0, not 1
+
+
+Edge cases =>
+
+    Singly Linked List ->
+
+        1. Insert at tail 
+            a. List might be empty
+
+        2. Insert head
+            a. List might be empty
+
+        3. Insert at any position 
+            a. List might be empty. Don't run loop if head is empty. 
+            a. Loop should run 1 time less of given position
+
+            b. Allows upto tmp->next becoming NULL. 
+                - Meaning, inserting at tail.(One position out of current tail)
+                - happens when position is equal to current(initial) list size 
+
+            c. if tmp itself becomes NULL, then tmp itself is already out of loop. 
+                so the position is invalid. 
+
+        4. Delete head
+            a. List might be empty. 
+            b. List might be empty after deletion. Update tail node in that case. 
+
+        5. Delete from any position 
+            a. List might be empty. Don't run loop if head is empty. 
+            b. Loop should run 1 time less of given position 
+            c. You can delete as long as the Node already exists. 
+                - So can't realistically delete a position out of the list. 
+                - Can't allow if tmp reaches the current tail. 
+                - Meaning, if tmp->next becomes NULL, then that too is invalid index
+                - Also, naturally, if tmp itself becomes NULL, that is invalid index.
+
+
+
+    Doubly Linked List -> 
+
+        1. Insert at tail 
+            a. List might be empty.
+
+        2. Insert at head
+            a. List might be empty.
+
+        3. Insert at any position
+            a. List might be empty.
+            b. If position is 0, call insert head. 
+            c. Can't handle tail insertion by itself. 
+                - tail insertion means, when tmp->next becomes NULL. 
+                - in such case, call insert tail function. 
+                - this happens when position is equal to size of the list
+
+            d. if tmp itself becomes NULL, then tmp itself is already out of loop. 
+                so the position is invalid. 
+
+        4. Delete head
+            a. List might be empty. 
+            b. List might be empty after deletion. 
+                - So before doing the reverse/backward connection : 
+                    check if the list is empty. head==NULL. 
+                    - if so, then update tail and return . 
+                - if the list is not empty, only then do the reverse connection. 
+
+        5. Delete tail 
+            a. List might be empty. 
+            b. List might be emply after deletion. 
+                - So before doing reverse/backward connection: 
+                    check if the list is empty, tail==NULL. 
+                    - if so, then update head and return. 
+                - if the list is not empty, only then do the reverse connection. 
+
+        6. Delete from any position 
+            a. List might be empty. Don't run loop if head is empty. 
+            b. Loop should run 1 time less of given position 
+            c. If position is 0, call delete head. 
+            d. Can't handle tail deletion by itself. 
+                - when tmp reaches one position before tail, 
+                - meaning tmp->next->next==NULL, this means tail deletion, call delete tail function
+                - such case happens when position =size-1
+            e. when tail->next becomes NULL
+            f. tail becomes NULL 
+                in both cases, deletion can't be done. so invalid index. 
+                - such case happens when position >= size of the list
+
+
+*****In case of Insert/Delete at position ******
+
+    the checking for position and invalid index and calling head/tail 
+    can be done either in => 
+        - the dedicated custom function 
+        - or within the main function with size tracking and checking. 
