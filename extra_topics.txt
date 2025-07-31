@@ -1,0 +1,4 @@
+Extra Topics aside from Phitron: 
+    1. Sliding Window
+        1.1. Fixed Size
+        1.2. Variable Size
