@@ -12,34 +12,30 @@ class Node{
         this->right=NULL;
     }
 };
-Node* btree_input()
+Node * btree_input()
 {
-    //Initial step:  create root and queue and push the root
     int val;
     cin>>val;
     Node *root;
     if(val==-1) root=NULL;
     else root=new Node(val);
+
     queue<Node *>q;
     if(root!=NULL) q.push(root);
 
-
-    //Repettitve step
+    //
     while(!q.empty())
     {
-        //step-1: store and pop the front of q
+        //
         Node *tmp=q.front();
         q.pop();
 
-        //step-2: working with the currently popped front
+        //
         int l, r;
         cin>>l>>r;
         Node *left_child, *right_child;
 
-        if(l==-1)
-        {
-            left_child=NULL;
-        }
+        if(l==-1) left_child=NULL;
         else left_child=new Node(l);
 
         if(r==-1) right_child=NULL;
@@ -48,26 +44,59 @@ Node* btree_input()
         tmp->left=left_child;
         tmp->right=right_child;
 
-
-
-        //step-3: pushing the children of currently popped front to the queue
+        //
         if(tmp->left!=NULL) q.push(tmp->left);
         if(tmp->right!=NULL) q.push(tmp->right);
     }
     return root;
 }
+void bst_insert(Node *root, int x)
+{
+    if(root==NULL)
+    {
+        root=new Node(x);
+        return;
+    }
+    if(x<root->val)
+    {
+        if(root->left==NULL)
+        {
+            root->left=new Node(x);
+        }
+        else 
+        {
+            bst_insert(root->left,x);
+        }
+    }
+    else if(x>root->val)
+    {
+        if(root->right==NULL)
+        {
+            root->right=new Node(x);
+        }
+        else 
+        {
+            bst_insert(root->right,x);
+        }
+    }
+}
 void level_order(Node *root)
 {
+    //
     queue<Node *>q;
     q.push(root);
 
+    //
     while(!q.empty())
     {
+        //
         Node *tmp=q.front();
         q.pop();
 
+        //
         cout<<tmp->val<<" ";
 
+        //
         if(tmp->left!=NULL) q.push(tmp->left);
         if(tmp->right!=NULL) q.push(tmp->right);
     }
@@ -75,10 +104,11 @@ void level_order(Node *root)
 int main()
 {
     Node *root=btree_input();
+    // level_order(root);
+    int in;
+    cin>>in;
+    bst_insert(root, in);
+    cout<<endl;
     level_order(root);
     return 0;
 }
-
-
-//input data 
-//10 20 60 30 50 70 -1 -1 40 -1 -1 -1 -1 80 -1 -1 -1

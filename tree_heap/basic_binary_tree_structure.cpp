@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+//basic binary tree node
+
 class Node{
     public:
     int val;
@@ -12,30 +14,9 @@ class Node{
         this->right=NULL;
     }
 };
-void level_order(Node *root)
-{
-    //initial step
-    queue<Node *>q;
-    q.push(root);
-
-    //repetetive step 
-    while(!q.empty())
-    {
-        //Step-1 : pop the front and keep it in another variable
-        Node *tmp=q.front();
-        q.pop();
-
-        //step-2 : Do the task with popped front 
-        cout<<tmp->val<<" ";
-
-        //step-3: Push the children of popped front into the queue
-        if(tmp->left!=NULL) q.push(tmp->left);
-        if(tmp->right!=NULL) q.push(tmp->right);
-    }
-}
 int main()
 {
-    Node *root=new Node(10);
+    Node *root= new Node(10);
     Node *a=new Node(20);
     Node *b=new Node(30);
     Node *c=new Node(40);
@@ -61,6 +42,5 @@ int main()
     
     d->left=f;
     d->right=g;
-    level_order(root);
     return 0;
 }
