@@ -2,3 +2,14 @@ Extra Topics aside from Phitron:
     1. Sliding Window
         1.1. Fixed Size
         1.2. Variable Size
+
+    2. Sorting Alorithms
+        2.1 Bubble Sort
+        2.2 Insertion Sort
+        2.3 Selection Sort
+    
+
+    3. Stack 
+        3.1 Infix to Postfix expression and vice-versa
+    
+    
