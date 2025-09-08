@@ -44,3 +44,19 @@ int main()
     bfs_with_level_pair(src);
     return 0;
 }
+
+
+
+/*
+7 8
+0 2
+0 1
+0 4
+1 2
+1 5
+1 3
+3 4
+3 6
+0
+
+*/
