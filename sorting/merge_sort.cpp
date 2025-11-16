@@ -53,7 +53,8 @@ void merge_sort(int a[],int l, int r)
     if(l<r)
     {
         int mid=(l+r)/2;
-        merge_sort(a,l,mid);
+        //consecutively dividing the array into 2 smaller parts
+        merge_sort(a,l,mid); 
         merge_sort(a,mid+1,r);
         //right Now, current function er array er mid er dui side nijera sorted hoye eseche. 
         merge(a,l,mid, r);
@@ -68,12 +69,17 @@ int main()
     {
         cin>>a[i];
     }
+
+    //before sort
     for(int i=0;i<n;i++)
     {
         cout<<a[i]<<" ";
     }
     cout<<endl;
+
     merge_sort(a,0,n-1);
+
+    //after sort
     for(int i=0;i<n;i++)
     {
         cout<<a[i]<<" ";

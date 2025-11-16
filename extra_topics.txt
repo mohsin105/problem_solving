@@ -12,4 +12,19 @@ Extra Topics aside from Phitron:
     3. Stack 
         3.1 Infix to Postfix expression and vice-versa
     
+
+    4. Graph 
+        4.1 Topological Sort
+        4.2 Articulation Point
+    
+
+    5. DP 
+        5.1 Fractional Knapsack
+        5.2 Unbounded knapsack 
+            - Coin Change Problem 
+        5.3 LCS
+        5.4 LIS
+        5.5 Edit Distance
+
+    
     

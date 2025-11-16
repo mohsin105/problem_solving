@@ -6,6 +6,7 @@ int main()
     cin>>n>>e;
     int adjMat[n][n];
     
+    //manually memsetting the matrix
     for(int i=0; i<n;i++)
     {
         for(int j=0; j<n;j++)
@@ -15,6 +16,8 @@ int main()
         }
     }
 
+    //taking input 
+    //3 variable for each edge
     for(int i=0; i<e; i++)
     {
         int u,v,w;
